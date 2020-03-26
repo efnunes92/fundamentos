@@ -1,6 +1,7 @@
 package classe.desafio;
 
 public class Jantar {
+
     public static void main(String[] args) {
 
         Comida c1 = new Comida("Arroz", 0.180);
@@ -9,11 +10,11 @@ public class Jantar {
         Pessoa p1 = new Pessoa("João", 99.8);
 
         System.out.println(p1.apresentar());
-        p1.Comer(c1);
 
+        p1.comer(c1);
         System.out.println(p1.apresentar());
-        p1.Comer(c2);
 
+        p1.comer(c2);
         System.out.println(p1.apresentar());
     }
 }

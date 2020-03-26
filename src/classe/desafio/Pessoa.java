@@ -1,22 +1,22 @@
 package classe.desafio;
 
 public class Pessoa {
-    String nome;
-    double peso;
 
-    public Pessoa(String nome, double peso){
-        this.nome = nome;
-        this.peso = peso;
+    String nomePessoa;
+    double pesoPessoa;
+
+    Pessoa(String nomePessoa, double pesoPessoa){
+        this.nomePessoa = nomePessoa;
+        this.pesoPessoa = pesoPessoa;
     }
 
-    public void Comer(Comida comida){
+    void comer(Comida comida){
         if(comida != null){
-            this.peso += comida.pesoComida;
+            this.pesoPessoa += comida.pesoComida;
         }
     }
-
-    public String apresentar(){
-        return "Olá eu sou o " + nome + " e tenho " + peso + " Kgs.";
+    String apresentar(){
+        return "Ola eu sou o " + nomePessoa + " e eu peso " + pesoPessoa + " Kg's";
     }
 }
 
