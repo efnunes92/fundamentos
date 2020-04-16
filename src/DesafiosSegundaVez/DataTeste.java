@@ -12,5 +12,10 @@ public class DataTeste {
         d2.dia = 01;
         d2.mes = 01;
         d2.ano = 2000;
+
+        String dataFormatada1 = d1.obterDataFormatada();
+
+        System.out.println(dataFormatada1);
+        System.out.println(d2.obterDataFormatada());
     }
 }
