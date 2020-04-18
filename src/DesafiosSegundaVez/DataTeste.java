@@ -9,9 +9,6 @@ public class DataTeste {
         d1.ano = 1992;
 
         Data d2 = new Data();
-        d2.dia = 01;
-        d2.mes = 01;
-        d2.ano = 2000;
 
         String dataFormatada1 = d1.obterDataFormatada();
 
