@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
-
     final String nome;
     final List<Compra> compras = new ArrayList<>();
 
@@ -19,7 +18,7 @@ public class Cliente {
     double obterValorTotal(){
         double total = 0;
 
-        for(Compra compra: compras){
+        for(Compra compra : compras){
             total += compra.obterValorTotal();
         }
 

@@ -15,7 +15,6 @@ public class CarroTeste {
         c1.acelerar();
         c1.acelerar();
         c1.acelerar();
-
         System.out.println(c1.motor.giros());
 
         c1.frear();
@@ -28,7 +27,7 @@ public class CarroTeste {
         c1.frear();
 
         // Faltou Encapsulamento!!!
-        // c1.motor.fatorInjecao = -30;
+        // c1.motor.fatorInjecao = -30
 
         System.out.println(c1.motor.giros());
 

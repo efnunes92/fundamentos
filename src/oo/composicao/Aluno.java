@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Aluno {
-
     final String nome;
-    final List<Curso> cursos = new ArrayList<>();
+    final List<Curso> cursos = new ArrayList<Curso>();
 
     Aluno(String nome){
         this.nome = nome;
@@ -18,7 +17,7 @@ public class Aluno {
     }
 
     Curso obterCursoPorNome(String nome){
-        for(Curso curso: this.cursos){
+        for(Curso curso : this.cursos){
             if(curso.nome.equalsIgnoreCase(nome)){
                 return curso;
             }
@@ -29,5 +28,4 @@ public class Aluno {
     public String toString(){
         return nome;
     }
-
 }
