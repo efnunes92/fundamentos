@@ -10,36 +10,19 @@ public class DesafioMap {
 
         List<Integer> nums = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
-        System.out.println("Modo que eu fiz...");
+        Function<Integer, String> binario = Integer::toBinaryString;
 
-        Function<Integer, String> numero =
-                num -> Integer.toBinaryString(num);
-        Function<String, String> inverter =
-                num -> new StringBuilder(num).reverse().toString();
-        Function<String, Integer> reInverter =
-                num -> Integer.parseInt(num, 2);
-
-        nums.stream()
-                .map(numero)
-                .map(inverter)
-                .map(reInverter)
-                .forEach(System.out::println);
-
-        System.out.println();
-
-
-
-        System.out.println("Modo que o professor fez...");
-
-        UnaryOperator<String> invert =
+        UnaryOperator<String> inverterString =
                 s -> new StringBuilder(s).reverse().toString();
-        Function<String, Integer> binParaInt =
-                num -> Integer.parseInt(num, 2);
+
+        Function<String, Integer> binarioParaInt =
+                s -> Integer.parseInt(s, 2);
 
         nums.stream()
-                .map(Integer::toBinaryString)
-                .map(invert)
-                .map(binParaInt)
+                .map(binario)
+              //  .map(Integer::toBinaryString)
+                .map(inverterString)
+                .map(binarioParaInt)
                 .forEach(System.out::println);
     }
 }

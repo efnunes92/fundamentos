@@ -1,6 +1,5 @@
 package streams;
 
-import java.rmi.server.UnicastRemoteObject;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
@@ -12,12 +11,14 @@ public class CriandoStreams {
         Consumer<String> print = System.out::print;
         Consumer<Integer> println = System.out::println;
 
-        Stream<String> langs = Stream.of("Java ", "Lua ", "JS\n");
+        Stream<String> langs = Stream.of("Java ", "Lua ", "JS\n"); //Stream.of método estático
+
         langs.forEach(print);
 
-        String[] maisLangs = {"Python ", "Lisp ", "Perl ", "Go\n"};
+        String[] maisLangs = {"Python ", "Lisp ", "Perl ", "Go\n" };
 
         Stream.of(maisLangs).forEach(print);
+
         Arrays.stream(maisLangs).forEach(print);
         Arrays.stream(maisLangs, 1, 4).forEach(print);
 
@@ -25,7 +26,7 @@ public class CriandoStreams {
         outrasLangs.stream().forEach(print);
         outrasLangs.parallelStream().forEach(print);
 
-        // Stream.generate(() -> "a").forEach(print); // gera stream de forma infinita
-        // Stream.iterate(0, n -> n + 1).forEach(println); // gera stream numerica de forma ordenada
+        // Stream.generate(() -> "a").forEach(print);
+        // Stream.iterate(0, n -> n+1).forEach(println);
     }
 }

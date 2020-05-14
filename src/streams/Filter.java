@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
-import java.util.function.UnaryOperator;
 
 public class Filter {
     public static void main(String[] args) {
@@ -18,24 +17,12 @@ public class Filter {
 
         List<Aluno> alunos = Arrays.asList(a1, a2, a3, a4, a5, a6);
 
-
-        System.out.println("Função dentro do filter e map");
-        alunos.stream()
-                .filter(a -> a.nota >= 7)
-                .map(a -> "Parabéns " + a.nome + " você foi aprovado")
-                .forEach(System.out::println);
-
-        System.out.println();
-        System.out.println();
-
-        System.out.println("Filter e map chamando funções externas");
-        Predicate<Aluno> aprovado = a -> a.nota >= 7;
-        Function<Aluno, String> parabens = a -> "Parabéns " + a.nome + " você foi aprovado";
+        Predicate<Aluno> aprovados = a -> a.nota >= 7;
+        Function<Aluno, String> parabens = a -> a.nome + ", Parabéns você está aprovado(a) !!!";
 
         alunos.stream()
-                .filter(aprovado)
+                .filter(aprovados)
                 .map(parabens)
                 .forEach(System.out::println);
-
     }
 }
